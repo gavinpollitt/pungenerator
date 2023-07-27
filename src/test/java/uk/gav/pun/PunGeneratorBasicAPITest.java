@@ -23,7 +23,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import uk.gav.pun.entity.Pun;
 import uk.gav.pun.service.PunService;
-import uk.gav.pun.service.PunServiceImpl;
 
 //Now changed to a full test to prevent JPA repos failing to load
 @SpringBootTest
