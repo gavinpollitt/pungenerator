@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -22,8 +23,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import uk.gav.pun.controller.PunController;
 import uk.gav.pun.entity.Pun;
 import uk.gav.pun.service.PunService;
+import uk.gav.pun.service.PunServiceImpl;
 
 @WebMvcTest(PunController.class)
+@EnableAutoConfiguration(exclude=PunServiceImpl.class)
 class PunGeneratorBasicAPITest {
 
 	@Autowired

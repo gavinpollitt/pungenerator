@@ -1,7 +1,7 @@
 drop table PUN if exists;
 
 create table PUN (
-    ID int not null AUTO_INCREMENT,
+    ID long not null AUTO_INCREMENT,
     PUN varchar(200) not null,
     PRIMARY KEY (ID)
 )

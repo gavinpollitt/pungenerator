@@ -45,7 +45,7 @@ class PunGeneratorRepositoryTest {
 		assertTrue(this.punEquals(4, p.getPun()), "Pun 4 cannot be located");
 	}
 
-	private boolean punEquals(int id, String pun) {
+	private boolean punEquals(long id, String pun) {
 		Pun foundPun = this.punRepository.getReferenceById(id);
 
 		return foundPun!=null && foundPun.getPun().equals(pun);
