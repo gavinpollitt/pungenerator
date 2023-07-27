@@ -1,1 +1,20 @@
-
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      mode: embedded
+  jpa:
+    hibernate:
+        ddl-auto: create  #no need to drop as it's in memory
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect 
+        "format_sql": true
+        #Hibernate, by default, only hits the DB lazily, i.e. once the property is accessed (and the session may have been closed). This prevents the lazy loading
+        enable_lazy_load_no_trans: true
+    show-sql: true
+    defer-datasource-initialization: true  #As schema is created by Hibernate and data.sql is created before intialisation

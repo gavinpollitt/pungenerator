@@ -21,7 +21,8 @@ public class PunController {
     @GetMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public Pun getPun() {
-        return punService.getPun();
+        Pun pun = punService.getPun(); 
+        return pun;
     }
 
     @ResponseStatus(HttpStatus.CREATED)
