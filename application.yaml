@@ -1,0 +1,20 @@
+spring:
+  datasource:
+      url: jdbc:mysql://127.0.0.1:6603/test_db
+      username: testu
+      password: testp
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      mode: always
+  jpa:
+    hibernate:
+        ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        "format_sql": true
+        #Hibernate, by default, only hits the DB lazily, i.e. once the property is accessed (and the session may have been closed). This prevents the lazy loading
+        enable_lazy_load_no_trans: true
+    show-sql: true
+    defer-datasource-initialization: true  #As schema is created by Hibernate and data.sql is created before intialisation
