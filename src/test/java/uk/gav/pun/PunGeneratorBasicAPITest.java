@@ -24,7 +24,7 @@ import uk.gav.pun.entity.Pun;
 import uk.gav.pun.service.PunService;
 
 @WebMvcTest(PunController.class)
-class PunGeneratorApplicationTests {
+class PunGeneratorBasicAPITest {
 
 	@Autowired
 	private MockMvc mockMVC;

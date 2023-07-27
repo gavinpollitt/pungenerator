@@ -14,7 +14,7 @@ public class Pun {
     private String pun;
 
     //Required for De-serialisation
-    private Pun() {
+    public Pun() {
 
     }
 
