@@ -1,5 +1,7 @@
 package uk.gav.pun.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +19,14 @@ import uk.gav.pun.service.PunService;
 public class PunController {
     @Autowired
     private PunService punService;
-    
+
+    private static Logger logger = LoggerFactory.getLogger(PunController.class);
+
     @GetMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public Pun getPun() {
-        Pun pun = punService.getPun(); 
+        Pun pun = punService.getPun();
+        logger.info("Returning pun ID:" + pun.getId());
         return pun;
     }
 
@@ -29,5 +34,6 @@ public class PunController {
     @PostMapping(consumes = "application/json")
     public void addPun(@RequestBody Pun pun) {
         this.punService.addPun(pun);
+        logger.info("Adding pun with ID:" + pun.getId());
     }
 }

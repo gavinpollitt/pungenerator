@@ -1,5 +1,6 @@
 package uk.gav.pun.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
@@ -25,6 +26,7 @@ public class Pun {
         this.pun = pun;
     }
 
+    @JsonIgnore
     public long getId() {
         return id;
     }
